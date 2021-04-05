@@ -13,7 +13,11 @@ class Core
     public function getUrl() {
         if(isset($_GET['url'])) {
             $url = $_GET['url'];
-            echo $url;
+            $url = rtrim($url, '/');
+            $url = htmlentities($url);
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = explode('/', $url);
+            print_r($url);
         }
     }
 } // class end
