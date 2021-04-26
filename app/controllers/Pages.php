@@ -7,7 +7,7 @@ class Pages extends Controller
      * Pages constructor.
      */
     public function __construct() {
-        //echo 'Pages class is loaded<br>';
+        $this->pagesModel = $this->model('Page');
     }
 
     public function index() {
